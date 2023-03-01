@@ -57,8 +57,7 @@ CREATE TABLE `mbti_result` (
 
 CREATE TABLE `music` (
   `music_id` varchar(1000) NOT NULL,
-  `album` varchar(1000) DEFAULT NULL,
-  `artist` varchar(1000) DEFAULT NULL,
+  `description` varchar(1000) DEFAULT NULL,
   `music_name` varchar(1000) DEFAULT NULL,
   `thumbnail` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`music_id`)
