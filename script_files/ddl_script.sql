@@ -56,14 +56,12 @@ CREATE TABLE `mbti_result` (
 -- mbti_music.music definition
 
 CREATE TABLE `music` (
-  `music_id` varchar(1000) NOT NULL,
-  `description` varchar(1000) DEFAULT NULL,
-  `music_name` varchar(1000) DEFAULT NULL,
-  `thumbnail` varchar(1000) DEFAULT NULL,
+  `music_id` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `description` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `music_name` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
+  `thumbnail` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   PRIMARY KEY (`music_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
-
-
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
 -- mbti_music.mbti_music_great definition
