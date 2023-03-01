@@ -31,33 +31,34 @@ CREATE TABLE `SPRING_SESSION_ATTRIBUTES` (
 
 CREATE TABLE `mbti_question` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `unit` char(4) NOT NULL,
+  `unit` char(4) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   `weight` int(11) NOT NULL,
-  `contents` varchar(200) NOT NULL,
-  `question_set` char(1) NOT NULL,
+  `contents` varchar(200) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `question_set` char(1) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
 -- mbti_music.mbti_result definition
 
 CREATE TABLE `mbti_result` (
   `result_id` int(11) NOT NULL AUTO_INCREMENT,
-  `mbti` char(4) DEFAULT NULL,
+  `mbti` char(4) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `EI` float DEFAULT NULL,
   `NS` float DEFAULT NULL,
   `TF` float DEFAULT NULL,
   `JP` float DEFAULT NULL,
   `time` datetime DEFAULT NULL,
   PRIMARY KEY (`result_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 
 -- mbti_music.music definition
 
 CREATE TABLE `music` (
   `music_id` varchar(1000) NOT NULL,
-  `description` varchar(1000) DEFAULT NULL,
+  `album` varchar(1000) DEFAULT NULL,
+  `artist` varchar(1000) DEFAULT NULL,
   `music_name` varchar(1000) DEFAULT NULL,
   `thumbnail` varchar(1000) DEFAULT NULL,
   PRIMARY KEY (`music_id`)
@@ -69,11 +70,11 @@ CREATE TABLE `music` (
 -- mbti_music.mbti_music_great definition
 
 CREATE TABLE `mbti_music_great` (
-  `music_id` varchar(1000) NOT NULL,
-  `session_id` varchar(1000) DEFAULT NULL,
+  `music_id` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
+  `session_id` varchar(1000) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci DEFAULT NULL,
   `mbti_music_great_id` int(11) NOT NULL AUTO_INCREMENT,
-  `mbti_name` char(4) NOT NULL,
+  `mbti_name` char(4) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   PRIMARY KEY (`mbti_music_great_id`),
   KEY `FK_music_TO_mbti_music_great_2` (`music_id`),
   CONSTRAINT `FK_music_TO_mbti_music_great_2` FOREIGN KEY (`music_id`) REFERENCES `music` (`music_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
